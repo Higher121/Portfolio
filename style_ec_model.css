@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+}
+.container1{
+    /* min-height: 100vh;
+    max-width: 50%; */
+    height: 100vh;
+    width: 50%;
+    background-color: rgb(8, 8, 108);
+    display:flexbox;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50%;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    inline-size: auto;
+    position: relative;
+    padding: 25%;
+}
+.l1{
+
+    /* flex-direction: row; */
+    height: 10px;
+    width: 30px;
+    border: 2px solid black;
+    background-color: rgb(235, 112, 5);
+    transform: rotate(145deg);
+    
+}
+.l2{
+     
+
+    height: 10px;
+    width: 30px;
+    border: 2px solid black;
+    background-color: rgb(206, 218, 228);
+        transform: rotate(145deg);
+    margin-bottom: 5px;
+
+}
+.l3{
+    
+
+    height: 10px;
+    width: 30px;
+    border: 2px solid black;
+    background-color: rgb(28, 246, 89);
+        transform: rotate(145deg);
+
+}
+
+.wrap{
+    display: inline-flex;
+    justify-content: center;
+    padding: 2px;
+    
+}
+
+.dot{
+    display:flex;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: rgb(80, 69, 53);
+    margin-left: 5px;
+}
+
+
+
+
+
+.container2{
+    /* min-width: 50%;
+    min-height: 100vh; */
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid; */
+    background-color: rgb(213, 248, 248);
+}
+.userBox{
+    /* border: 2px solid black; */
+    display: flexbox;
+    border-radius: 7%;
+    width: 80%;
+    padding: 10%;
+    height: 40%;
+    background-color: bisque;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+
+}
+#userId{
+    height: 42px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#passWord{
+     height: 42px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+}
+.label{
+    margin-bottom: 10px;
+    font-size: large;
+}
+button{
+     height: 42px;
+     width: 100px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    background-color: rgb(133, 110, 110);
+    color: rgb(4, 41, 90);
+    font-size: larger;
+    margin-bottom: 10px;
+}
