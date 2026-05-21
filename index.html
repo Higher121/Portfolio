@@ -1,112 +1,223 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suraj SK | Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Suraj SK | Full Stack Developer</title>
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navbar -->
+    <!-- ================= NAVBAR ================= -->
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">Suraj<span>SK</span></div>
+    <header class="header">
+        <nav class="navbar container">
+
+            <a href="#" class="logo">
+                Suraj<span>SK</span>
+            </a>
 
             <ul class="nav-links">
+
                 <li><a href="#home">Home</a></li>
+
                 <li><a href="#about">About</a></li>
+
                 <li><a href="#skills">Skills</a></li>
+
                 <li><a href="#projects">Projects</a></li>
+
                 <li><a href="#services">Services</a></li>
+
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="resume.html">Resume</a></li>
+
+                <li>
+                    <a href="resume.html" class="resume-btn">
+                        Resume
+                    </a>
+                </li>
+
             </ul>
 
             <div class="menu-btn">
-                ☰
+                <i class="ri-menu-3-line"></i>
             </div>
+
         </nav>
     </header>
 
+    <!-- ================= HERO ================= -->
 
-    <!-- Hero Section -->
+    <section class="hero container" id="home">
 
-    <section class="hero" id="home">
+        <div class="hero-left">
 
-        <div class="hero-content hidden">
-            <h3>Hello, I'm</h3>
-            <h1>Suraj <span>SK</span></h1>
-            <h2 class="typing"></h2>
+            <p class="hero-tag">
+                FULL STACK DEVELOPER
+            </p>
 
-            <p>
-                Passionate Flutter Developer, Web Developer and Database Enthusiast.
-                I create modern websites and applications with beautiful UI and smooth user experience.
+            <h1>
+                Hi, I'm <span>Suraj SK</span>
+            </h1>
+
+            <h2 class="typing-text">
+                Flutter Developer • Web Developer • UI Designer
+            </h2>
+
+            <p class="hero-description">
+
+                I build modern, responsive and high-performance websites
+                and mobile applications with premium UI/UX experience.
+                Passionate about Flutter, Firebase, Frontend Engineering
+                and scalable backend systems.
+
             </p>
 
             <div class="hero-buttons">
-                <a href="#contact" class="btn">Hire Me</a>
-                <a href="resume.html" class="btn secondary">Download CV</a>
+
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Hire Me
+                </a>
+
             </div>
+
+            <!-- Socials -->
 
             <div class="social-icons">
-                <a href="https://github.com/Higher121">GITHUB</a>
-                <a href="https://www.linkedin.com/in/professional-suraj-406930360">LinkedIn</a>
-                <a href="https://www.instagram.com/me.suraj_sk">InstaGram</a>
+
+                <a href="https://github.com/Higher121"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="ri-github-fill"></i>
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/professional-suraj-406930360"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="ri-linkedin-box-fill"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/me.suraj_sk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="ri-instagram-line"></i>
+
+                </a>
+
             </div>
+
         </div>
 
-        <div class="hero-image hidden">
-            <img src="me.png" alt="Profile Image">
+        <!-- Hero Image -->
+
+        <div class="hero-right">
+
+            <div class="hero-image">
+
+                <img src="me.png" alt="Suraj SK">
+
+            </div>
+
         </div>
 
     </section>
 
+    <!-- ================= ABOUT ================= -->
 
-    <!-- About Section -->
+    <section class="about section container" id="about">
 
-    <section class="about hidden" id="about">
+        <div class="section-header">
 
-        <div class="section-title">
+            <p>WHO I AM</p>
+
             <h2>About Me</h2>
+
         </div>
 
         <div class="about-container">
+
             <div class="about-card">
+
                 <p>
-                    I'm a passionate developer from Patna who loves building professional websites,
-                    Flutter applications, modern UI designs and scalable database systems.
+
+                    I'm a passionate Full Stack Developer from Patna, India
+                    focused on building premium web experiences,
+                    Flutter applications and scalable systems.
+
                 </p>
 
                 <p>
-                    Currently working on projects like TikTok Clone, SmartShop,
-                    VPN App and YouTube Downloader.
+
+                    I enjoy creating futuristic UI designs,
+                    smooth animations and powerful applications
+                    with clean architecture and modern technologies.
+
                 </p>
+
+                <div class="about-info">
+
+                    <div>
+                        <h3>10+</h3>
+                        <span>Projects</span>
+                    </div>
+
+                    <div>
+                        <h3>3+</h3>
+                        <span>Years Learning</span>
+                    </div>
+
+                    <div>
+                        <h3>100%</h3>
+                        <span>Passion</span>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
 
     </section>
 
+    <!-- ================= SKILLS ================= -->
 
-    <!-- Skills -->
+    <section class="skills section container" id="skills">
 
-    <section class="skills hidden" id="skills">
+        <div class="section-header">
 
-        <div class="section-title">
-            <h2>Skills</h2>
+            <p>MY SKILLS</p>
+
+            <h2>Technologies</h2>
+
         </div>
 
         <div class="skills-container">
 
             <div class="skill-card">
                 <h3>HTML</h3>
+
                 <div class="progress-bar">
                     <span style="width:95%"></span>
                 </div>
@@ -114,6 +225,7 @@
 
             <div class="skill-card">
                 <h3>CSS</h3>
+
                 <div class="progress-bar">
                     <span style="width:90%"></span>
                 </div>
@@ -121,27 +233,31 @@
 
             <div class="skill-card">
                 <h3>JavaScript</h3>
-                <div class="progress-bar">
-                    <span style="width:80%"></span>
-                </div>
-            </div>
 
-            <div class="skill-card">
-                <h3>Flutter</h3>
                 <div class="progress-bar">
                     <span style="width:85%"></span>
                 </div>
             </div>
 
             <div class="skill-card">
-                <h3>Firebase</h3>
+                <h3>Flutter</h3>
+
                 <div class="progress-bar">
-                    <span style="width:75%"></span>
+                    <span style="width:88%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Firebase</h3>
+
+                <div class="progress-bar">
+                    <span style="width:82%"></span>
                 </div>
             </div>
 
             <div class="skill-card">
                 <h3>MySQL</h3>
+
                 <div class="progress-bar">
                     <span style="width:80%"></span>
                 </div>
@@ -151,114 +267,191 @@
 
     </section>
 
+    <!-- ================= PROJECTS ================= -->
 
-    <!-- Projects -->
+    <section class="projects section container" id="projects">
 
-    <section class="projects hidden" id="projects">
+        <div class="section-header">
 
-        <div class="section-title">
-            <h2>Projects</h2>
+            <p>PORTFOLIO</p>
+
+            <h2>Featured Projects</h2>
+
         </div>
 
         <div class="project-container">
 
             <div class="project-card">
-                <h3>TikTok Clone</h3>
-                <p>
-                    Professional short video sharing application using Flutter and Firebase.
-                </p>
+
+                <div class="project-content">
+
+                    <h3>TikTok Clone</h3>
+
+                    <p>
+
+                        Short video sharing platform built using
+                        Flutter and Firebase with authentication,
+                        uploads and real-time interactions.
+
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="project-card">
-                <h3>SmartShop</h3>
-                <p>
-                    Platform for local shopkeepers and customers with delivery and pickup system.
-                </p>
+
+                <div class="project-content">
+
+                    <h3>SmartShop</h3>
+
+                    <p>
+
+                        Local business platform helping customers
+                        discover nearby shops with ordering
+                        and delivery system.
+
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="project-card">
-                <h3>VPN App</h3>
-                <p>
-                    Advanced VPN application with server selection and secure connection.
-                </p>
+
+                <div class="project-content">
+
+                    <h3>VPN Application</h3>
+
+                    <p>
+
+                        Secure and modern VPN application
+                        with country selection and fast connectivity.
+
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="project-card">
-                <h3>YouTube Downloader</h3>
-                <p>
-                    Download videos with smooth UI and fast processing.
-                </p>
+
+                <div class="project-content">
+
+                    <h3>YouTube Downloader</h3>
+
+                    <p>
+
+                        Smooth video downloader application
+                        with elegant UI and fast processing engine.
+
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
 
+    <!-- ================= SERVICES ================= -->
 
-    <!-- Services -->
+    <section class="services section container" id="services">
 
-    <section class="services hidden" id="services">
+        <div class="section-header">
 
-        <div class="section-title">
+            <p>WHAT I DO</p>
+
             <h2>Services</h2>
+
         </div>
 
         <div class="service-container">
 
             <div class="service-card">
+
+                <i class="ri-code-s-slash-line"></i>
+
                 <h3>Web Development</h3>
+
                 <p>
-                    Responsive and professional websites using modern technologies.
+                    Responsive and modern websites with smooth user experience.
                 </p>
+
             </div>
 
             <div class="service-card">
-                <h3>Flutter App Development</h3>
+
+                <i class="ri-smartphone-line"></i>
+
+                <h3>Flutter Development</h3>
+
                 <p>
-                    Android applications with beautiful design and smooth performance.
+                    High performance Android apps using Flutter & Firebase.
                 </p>
+
             </div>
 
             <div class="service-card">
+
+                <i class="ri-palette-line"></i>
+
                 <h3>UI/UX Design</h3>
+
                 <p>
-                    Modern user interfaces with animations and responsive layouts.
+                    Beautiful interfaces with modern and futuristic design.
                 </p>
+
             </div>
 
         </div>
 
     </section>
 
+    <!-- ================= CONTACT ================= -->
 
-    <!-- Contact -->
+    <section class="contact section container" id="contact">
 
-    <section class="contact hidden" id="contact">
+        <div class="section-header">
 
-        <div class="section-title">
+            <p>GET IN TOUCH</p>
+
             <h2>Contact Me</h2>
+
         </div>
 
         <div class="contact-container">
 
-            <form>
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit" class="btn">Send Message</button>
+            <form class="contact-form">
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <textarea rows="6" placeholder="Write your message..." required></textarea>
+
+                <button type="submit" class="btn">
+                    Send Message
+                </button>
+
             </form>
 
         </div>
 
     </section>
 
+    <!-- ================= FOOTER ================= -->
 
-    <!-- Footer -->
+    <footer class="footer">
 
-    <footer>
-        <h3>© 2026 Suraj SK | All Rights Reserved</h3>
+        <h3>
+            © 2026 Suraj SK • All Rights Reserved
+        </h3>
+
     </footer>
 
+    <!-- Script -->
 
     <script src="script.js"></script>
 
