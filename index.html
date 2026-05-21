@@ -1,119 +1,268 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortFolio Site</title>
+    <title>Suraj SK | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navItems">
-            <h1 class="logo" >PortFolio </h1>
-            <ul id="navItem">
-                 <a href="index.html">    <li    >Home</li>  </a>
-                 <a href="services.html ">    <li    >Services</li>  </a>
-                 <a href="contact.html ">    <li    >Contact Us</li>  </a>
-                 <a href="About Us.html">    <li    >About Us</li>  </a>
+
+    <!-- Navbar -->
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Suraj<span>SK</span></div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
             </ul>
-       </div>
-                       <input class="searchBar" type="search" placeholder="Search">
-                       
 
-    </nav>
-<!-- Nav Ends -->
+            <div class="menu-btn">
+                ☰
+            </div>
+        </nav>
+    </header>
 
-<div class="contentWithImage" >
-    <h1 class ="info">##### :: Details :: #####</h1><br>
 
-    <!-- <span class="contText"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti asperiores ipsum minima! quibusdam eos, qui, fugit a commodi!</p></span> -->
-    <div>
-    <h2>Name :- SURAJ SK</h2>
-    <h2>Belongs To :- PATNA</h2><br>
-    <H2>@Author</H2>
-</div><br>
+    <!-- Hero Section -->
 
-    <div  class="image"><img src=".\image\me.png" alt="Image Loading..."></div>
-</div>
+    <section class="hero" id="home">
 
-<div class="content">
-    <div><h2 class="info" >####### :: CONTENT :: #######</h2></div>
-    <br>
+        <div class="hero-content hidden">
+            <h3>Hello, I'm</h3>
+            <h1>Suraj <span>SK</span></h1>
+            <h2 class="typing"></h2>
 
-<div><video  src="image/Ye raatein.mp4" width="95%" height="340px" controls=""  id="vidTag"></video></div>
+            <p>
+                Passionate Flutter Developer, Web Developer and Database Enthusiast.
+                I create modern websites and applications with beautiful UI and smooth user experience.
+            </p>
 
-</div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="resume.html" class="btn secondary">Download CV</a>
+            </div>
 
-<div class="education">
-    <h2 class="info" >##### :: Education :: #####</h2><br><br>
+            <div class="social-icons">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
 
-    <div class="eduField">
-        <h3>## Matriculation :: First Division </h3>
-            <h4>Hindi + English + Math + Science + Social Science + Sanskrit</h4>
-        <h3>## IndterMediate :: First Division </h3>
-            <h4>Physics + Chemistry + Math + Hindi + English</h4>
-        <h3>## Graduation ::</h3>
-            <h4>BCA 1st Year :: Passed with 76.3%</h4>
-            <h4>BCA 2nd Year :: Passed</h4>
-            <h4>BCA 3rd Year :: OnGoing...</h4>
-    </div>
-</div>
-<div class="skills">
-    <h2 class="info">###### :: SKILLS :: ######</h2><br><br>
+        <div class="hero-image hidden">
+            <img src="./image/me.png" alt="Profile Image">
+        </div>
 
-    <div class="skillField">
+    </section>
 
-    <h3>LeaderShip</h3>
 
-    <h3>Business Minded</h3>
+    <!-- About Section -->
 
-    <h3>Web Development</h3>
+    <section class="about hidden" id="about">
 
-    <h3>App Development </h3>
-    
-    <h3>Database Management</h3>
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
 
-    <h3>Content Writing</h3>
-    </div>
+        <div class="about-container">
+            <div class="about-card">
+                <p>
+                    I'm a passionate developer from Patna who loves building professional websites,
+                    Flutter applications, modern UI designs and scalable database systems.
+                </p>
 
-</div>
+                <p>
+                    Currently working on projects like TikTok Clone, SmartShop,
+                    VPN App and YouTube Downloader.
+                </p>
+            </div>
+        </div>
 
-<div class="language">
-    <h2 class="info">## :: Languages Known :: ##</h2>
-    <br><br>
-<div class="langField">
-    <h1>C , C++ , JAVA ,HTML ,<br> CSS , JAVASCRIPT</h1>
-</div>
-</div>
+    </section>
 
-<footer class="foot">
-    <h3>This Website Is Created By <a class="orgLink" href="#">SSR CREATION</a></h3><br>
-    <div class="footerCont">
-            <ul     class="footIt">   
-                <li >  Display </li>
-                <li >  Services </li>
-                <li >  Profile </li>
-            </ul>
-             <!-- <-- It's A row Not Column -->
-            <br>
-             <ul    class="footIt">   
-                <li >  Home </li>
-                <li >  Browse </li>
-                <li >  Skills </li>
-            </ul>
-            <br>
-            <ul     class="footIt">   
-                <li >    Events </li>
-                <li >    Organize </li>
-                <li >    Contact Us </li>
-            </ul>
-            
-    </div><br>
-    <h3> &#169 Copyright @ <a  class="orgLink"  href="#">SSR CREATION</a> || DMCA protected || Privacy Policy</h3>
 
-</footer>
-    
+    <!-- Skills -->
+
+    <section class="skills hidden" id="skills">
+
+        <div class="section-title">
+            <h2>Skills</h2>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <div class="progress-bar">
+                    <span style="width:95%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <div class="progress-bar">
+                    <span style="width:90%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <span style="width:80%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Flutter</h3>
+                <div class="progress-bar">
+                    <span style="width:85%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Firebase</h3>
+                <div class="progress-bar">
+                    <span style="width:75%"></span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>MySQL</h3>
+                <div class="progress-bar">
+                    <span style="width:80%"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section class="projects hidden" id="projects">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>TikTok Clone</h3>
+                <p>
+                    Professional short video sharing application using Flutter and Firebase.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>SmartShop</h3>
+                <p>
+                    Platform for local shopkeepers and customers with delivery and pickup system.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>VPN App</h3>
+                <p>
+                    Advanced VPN application with server selection and secure connection.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>YouTube Downloader</h3>
+                <p>
+                    Download videos with smooth UI and fast processing.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+
+    <section class="services hidden" id="services">
+
+        <div class="section-title">
+            <h2>Services</h2>
+        </div>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>
+                    Responsive and professional websites using modern technologies.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Flutter App Development</h3>
+                <p>
+                    Android applications with beautiful design and smooth performance.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>UI/UX Design</h3>
+                <p>
+                    Modern user interfaces with animations and responsive layouts.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="contact hidden" id="contact">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <h3>© 2026 Suraj SK | All Rights Reserved</h3>
+    </footer>
+
 
     <script src="script.js"></script>
+
 </body>
 </html>
+
+
