@@ -574,7 +574,7 @@ section{
     transform:translateY(0);
 }
 
-/* ================= CUSTOM CURSOR ================= */
+/* ================= CUSTOM CURSOR =================
 
 .custom-cursor{
     position:fixed;
@@ -589,7 +589,7 @@ section{
         transform 0.08s linear,
         width 0.2s ease,
         height 0.2s ease;
-}
+} */
 
 /* ================= SCROLL PROGRESS ================= */
 
