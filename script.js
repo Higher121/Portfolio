@@ -1,7 +1,6 @@
 // =========================
-// PORTFOLIO SCRIPT
+// PORTFOLIO OPTIMIZED SCRIPT
 // =========================
-
 
 // =========================
 // CUSTOM CURSOR
@@ -13,7 +12,7 @@ cursor.classList.add("custom-cursor");
 
 document.body.appendChild(cursor);
 
-document.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove", (e) => {
 
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
@@ -85,11 +84,13 @@ function typeEffect(){
 
 }
 
-typeEffect();
+if(typingText){
+    typeEffect();
+}
 
 
 // =========================
-// SCROLL REVEAL
+// SCROLL REVEAL ANIMATION
 // =========================
 
 const hiddenElements =
@@ -157,13 +158,11 @@ window.addEventListener("scroll", () => {
 
     sections.forEach((section) => {
 
-        const sectionTop =
-        section.offsetTop;
+        const sectionTop = section.offsetTop;
 
         if(scrollY >= sectionTop - 200){
 
-            current =
-            section.getAttribute("id");
+            current = section.getAttribute("id");
 
         }
 
@@ -173,8 +172,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href")
-           === `#${current}`){
+        if(link.getAttribute("href") === `#${current}`){
 
             link.classList.add("active");
 
@@ -184,7 +182,10 @@ window.addEventListener("scroll", () => {
 
 });
 
-// ================= MOBILE MENU =================
+
+// =========================
+// MOBILE MENU
+// =========================
 
 const menuBtn =
 document.querySelector(".menu-btn");
@@ -192,11 +193,29 @@ document.querySelector(".menu-btn");
 const navLinks =
 document.querySelector(".nav-links");
 
-menuBtn.onclick = () => {
+if(menuBtn){
 
-    navLinks.classList.toggle("show-menu");
+    menuBtn.onclick = () => {
 
-};
+        navLinks.classList.toggle("show-menu");
+
+        const icon = menuBtn.querySelector("i");
+
+        if(navLinks.classList.contains("show-menu")){
+
+            icon.classList.remove("ri-menu-3-line");
+            icon.classList.add("ri-close-line");
+
+        }else{
+
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-3-line");
+
+        }
+
+    };
+
+}
 
 
 // =========================
@@ -209,6 +228,11 @@ document.querySelectorAll(".nav-links a")
     link.addEventListener("click", () => {
 
         navLinks.classList.remove("show-menu");
+
+        const icon = menuBtn.querySelector("i");
+
+        icon.classList.remove("ri-close-line");
+        icon.classList.add("ri-menu-3-line");
 
     });
 
@@ -226,17 +250,24 @@ progressBar.classList.add(
     "scroll-progress"
 );
 
+progressBar.style.position = "fixed";
+progressBar.style.top = "0";
+progressBar.style.left = "0";
+progressBar.style.height = "4px";
+progressBar.style.width = "0%";
+progressBar.style.background = "#38bdf8";
+progressBar.style.zIndex = "999999";
+progressBar.style.boxShadow = "0 0 10px #38bdf8";
+
 document.body.appendChild(progressBar);
 
 window.addEventListener("scroll", () => {
 
     const totalHeight =
-
     document.body.scrollHeight -
     window.innerHeight;
 
     const progress =
-
     (window.pageYOffset / totalHeight)
     * 100;
 
@@ -247,14 +278,15 @@ window.addEventListener("scroll", () => {
 
 
 // =========================
-// PARALLAX HERO EFFECT
+// HERO PARALLAX EFFECT
 // =========================
 
-window.addEventListener("mousemove",
-(e) => {
+const heroImage =
+document.querySelector(".hero-image");
 
-    const heroImage =
-    document.querySelector(".hero-image");
+window.addEventListener("mousemove", (e) => {
+
+    if(!heroImage) return;
 
     const x =
     (window.innerWidth / 2 - e.pageX)
@@ -279,8 +311,7 @@ document.querySelectorAll(".btn");
 
 buttons.forEach((btn) => {
 
-    btn.addEventListener("mousemove",
-    (e) => {
+    btn.addEventListener("mousemove", (e) => {
 
         const position =
         btn.getBoundingClientRect();
@@ -296,14 +327,12 @@ buttons.forEach((btn) => {
         position.height / 2;
 
         btn.style.transform =
-
-        `translate(${x * 0.2}px,
-        ${y * 0.2}px)`;
+        `translate(${x * 0.15}px,
+        ${y * 0.15}px)`;
 
     });
 
-    btn.addEventListener("mouseleave",
-    () => {
+    btn.addEventListener("mouseleave", () => {
 
         btn.style.transform =
         "translate(0px,0px)";
@@ -414,7 +443,7 @@ function initParticles(){
 
     particlesArray = [];
 
-    for(let i = 0; i < 120; i++){
+    for(let i = 0; i < 100; i++){
 
         particlesArray.push(
             new Particle()
@@ -453,40 +482,7 @@ animateParticles();
 window.addEventListener("resize", () => {
 
     resizeCanvas();
-
     initParticles();
-
-});
-
-
-// =========================
-// PAGE LOADER
-// =========================
-
-window.addEventListener("load", () => {
-
-    const loader =
-    document.createElement("div");
-
-    loader.classList.add("loader");
-
-    loader.innerHTML =
-
-    `
-    <div class="loader-text">
-        Suraj SK
-    </div>
-    `;
-
-    document.body.appendChild(loader);
-
-    setTimeout(() => {
-
-        loader.classList.add(
-            "loader-hide"
-        );
-
-    },1500);
 
 });
 
@@ -500,8 +496,7 @@ document.querySelectorAll(".project-card");
 
 cards.forEach((card) => {
 
-    card.addEventListener("mousemove",
-    (e) => {
+    card.addEventListener("mousemove", (e) => {
 
         const rect =
         card.getBoundingClientRect();
@@ -519,7 +514,6 @@ cards.forEach((card) => {
         ((x / rect.width) - 0.5) * -10;
 
         card.style.transform =
-
         `perspective(1000px)
          rotateX(${rotateX}deg)
          rotateY(${rotateY}deg)
@@ -527,11 +521,9 @@ cards.forEach((card) => {
 
     });
 
-    card.addEventListener("mouseleave",
-    () => {
+    card.addEventListener("mouseleave", () => {
 
         card.style.transform =
-
         `perspective(1000px)
          rotateX(0)
          rotateY(0)`;
@@ -539,3 +531,71 @@ cards.forEach((card) => {
     });
 
 });
+
+
+// =========================
+// EMAILJS CONTACT FORM
+// =========================
+
+emailjs.init("0AVVD_B7J7IahFX0p");
+
+const contactForm =
+document.getElementById("contact-form");
+
+const formMessage =
+document.querySelector(".form-message");
+
+if(contactForm){
+
+    contactForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const templateParams = {
+
+            from_name:
+            document.getElementById("name").value,
+
+            from_email:
+            document.getElementById("email").value,
+
+            message:
+            document.getElementById("message").value
+
+        };
+
+        formMessage.innerHTML =
+        "Sending message...";
+
+        formMessage.style.color =
+        "#38bdf8";
+
+        emailjs.send(
+
+            "service_2r7m992",
+            "template_p36ru24",
+            templateParams
+
+        ).then(() => {
+
+            formMessage.innerHTML =
+            "Message sent successfully ✔";
+
+            formMessage.style.color =
+            "#22c55e";
+
+            contactForm.reset();
+
+        }).catch(() => {
+
+            formMessage.innerHTML =
+            "Failed to send message.";
+
+            formMessage.style.color =
+            "#ef4444";
+
+        });
+
+    });
+
+}
