@@ -866,4 +866,55 @@ img{
     }
 
 }
+
+/* =========================
+   FINAL WORKING MENU FIX
+========================= */
+
+.menu-btn{
+    position:relative;
+    z-index:100001;
+}
+
+.nav-links{
+    z-index:100000 !important;
+}
+
+@media screen and (max-width:992px){
+
+    .nav-links{
+
+        position:fixed !important;
+
+        top:0 !important;
+        right:-100% !important;
+
+        width:280px !important;
+        height:100vh !important;
+
+        background:#020617 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+
+        justify-content:center !important;
+        align-items:flex-start !important;
+
+        padding:80px 40px !important;
+
+        gap:30px !important;
+
+        transition:right 0.4s ease !important;
+
+        visibility:visible !important;
+        opacity:1 !important;
+
+        z-index:100000 !important;
+    }
+
+    .nav-links.show-menu{
+        right:0 !important;
+    }
+
+}
             
