@@ -584,14 +584,16 @@ img{
     z-index:-1;
     pointer-events:none;
 }
+/* =======================================================
+   RESPONSIVE DESIGN
+======================================================= */
 
-/* ================= RESPONSIVE ================= */
 
 /* =========================
-   MOBILE RESPONSIVE FIX
+   TABLET & MOBILE
 ========================= */
 
-@media(max-width:992px){
+@media screen and (max-width:992px){
 
     html,
     body{
@@ -599,37 +601,37 @@ img{
         width:100%;
     }
 
-    /* NAVBAR */
+    section{
+        padding:100px 6%;
+    }
+
+    /* ================= NAVBAR ================= */
 
     .navbar{
         padding:18px 6%;
     }
 
     .menu-btn{
-        display:block;
+        display:block !important;
         font-size:32px;
-        cursor:pointer;
-        z-index:3001;
         color:white;
+        cursor:pointer;
+        z-index:99999;
     }
-
-    /* MOBILE MENU */
 
     .nav-links{
 
-        position:fixed;
+        position:fixed !important;
 
         top:0;
         right:-100%;
 
-        width:75%;
-        max-width:320px;
-
+        width:280px;
         height:100vh;
 
-        background:#0f172a;
+        background:#020617;
 
-        display:flex;
+        display:flex !important;
         flex-direction:column;
 
         justify-content:center;
@@ -637,11 +639,11 @@ img{
 
         gap:30px;
 
-        padding:60px 40px;
+        padding:80px 40px;
 
         transition:0.4s ease;
 
-        z-index:3000;
+        z-index:9999;
 
         border-left:1px solid rgba(255,255,255,0.08);
 
@@ -649,39 +651,36 @@ img{
     }
 
     .nav-links.show-menu{
-        right:0;
+        right:0 !important;
     }
 
     .nav-links li{
-        list-style:none;
         width:100%;
+        list-style:none;
     }
 
     .nav-links li a{
-        color:white;
         font-size:18px;
-        font-weight:500;
-        display:block;
         width:100%;
-        transition:0.3s;
+        display:block;
     }
 
-    .nav-links li a:hover{
-        color:#38bdf8;
-        transform:translateX(8px);
-    }
-
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero{
         flex-direction:column-reverse;
+        justify-content:center;
         text-align:center;
-        padding-top:140px;
-        gap:50px;
+        gap:60px;
+        padding-top:150px;
     }
 
     .hero-left{
         width:100%;
+    }
+
+    .hero-description{
+        margin:auto;
     }
 
     .hero-buttons{
@@ -693,12 +692,8 @@ img{
         justify-content:center;
     }
 
-    .hero-description{
-        margin:auto;
-    }
-
     .hero-left h1{
-        font-size:52px;
+        font-size:58px;
     }
 
     .typing-text{
@@ -706,20 +701,85 @@ img{
     }
 
     .hero-image img{
-        width:300px;
-        height:300px;
+        width:320px;
+        height:320px;
     }
 
-    /* ABOUT */
+    /* ================= ABOUT ================= */
 
     .about-info{
         flex-direction:column;
     }
 
-    /* SECTION */
+    /* ================= GRID ================= */
+
+    .skills-container,
+    .project-container,
+    .service-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+
+@media screen and (max-width:768px){
 
     section{
-        padding:100px 6%;
+        padding:90px 5%;
+    }
+
+    .navbar{
+        padding:18px 5%;
+    }
+
+    .logo{
+        font-size:26px;
+    }
+
+    .hero{
+        padding-top:140px;
+        gap:50px;
+    }
+
+    .hero-left h1{
+        font-size:48px;
+        line-height:1.2;
+    }
+
+    .typing-text{
+        font-size:22px;
+    }
+
+    .hero-description{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .hero-image img{
+        width:280px;
+        height:280px;
+    }
+
+    .section-header h2{
+        font-size:40px;
+    }
+
+    .about-card{
+        padding:35px;
+    }
+
+    .contact-form{
+        padding:35px;
+    }
+
+    .skills-container,
+    .project-container,
+    .service-container{
+        grid-template-columns:1fr;
     }
 
 }
@@ -729,7 +789,7 @@ img{
    SMALL MOBILE DEVICES
 ========================= */
 
-@media(max-width:600px){
+@media screen and (max-width:480px){
 
     html,
     body{
@@ -737,7 +797,7 @@ img{
     }
 
     section{
-        padding:90px 5%;
+        padding:80px 5%;
     }
 
     .navbar{
@@ -748,50 +808,62 @@ img{
         font-size:24px;
     }
 
+    .nav-links{
+        width:85%;
+        padding:80px 30px;
+    }
+
+    .hero{
+        gap:40px;
+    }
+
     .hero-left h1{
         font-size:40px;
-        line-height:1.2;
     }
 
     .typing-text{
-        font-size:20px;
+        font-size:18px;
     }
 
     .hero-description{
-        font-size:15px;
-        line-height:1.8;
-    }
-
-    .hero-image img{
-        width:240px;
-        height:240px;
+        font-size:14px;
     }
 
     .hero-buttons{
         flex-direction:column;
-        gap:16px;
+        width:100%;
     }
 
     .btn{
         width:100%;
     }
 
+    .hero-image img{
+        width:230px;
+        height:230px;
+    }
+
     .section-header h2{
         font-size:34px;
     }
 
-    .contact-form{
+    .about-card{
         padding:28px;
     }
 
-    .project-container,
-    .skills-container,
-    .service-container{
-        grid-template-columns:1fr;
+    .contact-form{
+        padding:25px;
     }
 
-    .nav-links{
-        width:85%;
+    .service-card,
+    .project-card,
+    .skill-card{
+        padding:28px;
+    }
+
+    .footer h3{
+        font-size:13px;
     }
 
 }
+            
