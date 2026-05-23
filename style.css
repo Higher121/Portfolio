@@ -587,106 +587,189 @@ img{
 
 /* ================= RESPONSIVE ================= */
 
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
 @media(max-width:992px){
+
+    html,
+    body{
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+        padding:18px 6%;
+    }
+
+    .menu-btn{
+        display:block;
+        font-size:32px;
+        cursor:pointer;
+        z-index:3001;
+        color:white;
+    }
+
+    /* MOBILE MENU */
+
+    .nav-links{
+
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:75%;
+        max-width:320px;
+
+        height:100vh;
+
+        background:#0f172a;
+
+        display:flex;
+        flex-direction:column;
+
+        justify-content:center;
+        align-items:flex-start;
+
+        gap:30px;
+
+        padding:60px 40px;
+
+        transition:0.4s ease;
+
+        z-index:3000;
+
+        border-left:1px solid rgba(255,255,255,0.08);
+
+        box-shadow:-10px 0 30px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.show-menu{
+        right:0;
+    }
+
+    .nav-links li{
+        list-style:none;
+        width:100%;
+    }
+
+    .nav-links li a{
+        color:white;
+        font-size:18px;
+        font-weight:500;
+        display:block;
+        width:100%;
+        transition:0.3s;
+    }
+
+    .nav-links li a:hover{
+        color:#38bdf8;
+        transform:translateX(8px);
+    }
+
+    /* HERO */
 
     .hero{
         flex-direction:column-reverse;
         text-align:center;
         padding-top:140px;
+        gap:50px;
+    }
+
+    .hero-left{
+        width:100%;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .social-icons{
+        justify-content:center;
     }
 
     .hero-description{
         margin:auto;
     }
 
-    .hero-buttons,
-    .social-icons{
-        justify-content:center;
-    }
-
     .hero-left h1{
-        font-size:58px;
+        font-size:52px;
     }
 
     .typing-text{
-        font-size:26px;
+        font-size:24px;
     }
 
     .hero-image img{
-        width:320px;
-        height:320px;
+        width:300px;
+        height:300px;
     }
 
-    .nav-links{
-        display:none;
-    }
-
-    .menu-btn{
-        display:block;
-    }
+    /* ABOUT */
 
     .about-info{
         flex-direction:column;
     }
 
-/* MOBILE MENU */
-    .nav-links{
+    /* SECTION */
 
-        position:absolute;
-        top:90px;
-        right:-100%;
-
-        width:280px;
-
-        flex-direction:column;
-        align-items:flex-start;
-
-        padding:30px;
-
-        background:rgba(15,23,42,0.98);
-
-        backdrop-filter:blur(20px);
-
-        border:1px solid rgba(255,255,255,0.08);
-
-        border-radius:20px;
-
-        transition:0.4s;
-
-        gap:25px;
-    }
-
-    .nav-links.show-menu{
-        right:20px;
+    section{
+        padding:100px 6%;
     }
 
 }
 
+
+/* =========================
+   SMALL MOBILE DEVICES
+========================= */
+
 @media(max-width:600px){
 
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
     section{
-        padding:90px 6%;
+        padding:90px 5%;
     }
 
     .navbar{
-        padding:18px 6%;
+        padding:16px 5%;
+    }
+
+    .logo{
+        font-size:24px;
     }
 
     .hero-left h1{
-        font-size:42px;
+        font-size:40px;
+        line-height:1.2;
     }
 
     .typing-text{
         font-size:20px;
     }
 
+    .hero-description{
+        font-size:15px;
+        line-height:1.8;
+    }
+
     .hero-image img{
-        width:250px;
-        height:250px;
+        width:240px;
+        height:240px;
     }
 
     .hero-buttons{
         flex-direction:column;
+        gap:16px;
     }
 
     .btn{
@@ -694,10 +777,21 @@ img{
     }
 
     .section-header h2{
-        font-size:36px;
+        font-size:34px;
     }
 
     .contact-form{
-        padding:30px;
+        padding:28px;
     }
+
+    .project-container,
+    .skills-container,
+    .service-container{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        width:85%;
+    }
+
 }
