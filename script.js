@@ -184,10 +184,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-
-// =========================
-// MOBILE MENU
-// =========================
+// ================= MOBILE MENU =================
 
 const menuBtn =
 document.querySelector(".menu-btn");
@@ -195,11 +192,11 @@ document.querySelector(".menu-btn");
 const navLinks =
 document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.onclick = () => {
 
     navLinks.classList.toggle("show-menu");
 
-});
+};
 
 
 // =========================
