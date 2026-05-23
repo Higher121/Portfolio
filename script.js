@@ -169,39 +169,68 @@ window.addEventListener("scroll", () => {
 // =========================
 
 const menuBtn = document.querySelector(".menu-btn");
-const navMenu = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".nav-links");
 
 menuBtn.addEventListener("click", () => {
 
-    navMenu.classList.toggle("show-menu");
+    navLinks.classList.toggle("show-menu");
 
-    if (navMenu.classList.contains("show-menu")) {
+    // ICON CHANGE
 
-        menuBtn.innerHTML =
-            '<i class="ri-close-line"></i>';
-
-    } else {
+    if(navLinks.classList.contains("show-menu")){
 
         menuBtn.innerHTML =
-            '<i class="ri-menu-3-line"></i>';
+        '<i class="ri-close-line"></i>';
+
+    }else{
+
+        menuBtn.innerHTML =
+        '<i class="ri-menu-3-line"></i>';
 
     }
 
 });
 
 
-// CLOSE MENU WHEN CLICKING LINK
+// =========================
+// CLOSE MENU WHEN CLICKING
+// =========================
 
-navLinks.forEach((link) => {
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        navMenu.classList.remove("show-menu");
+        navLinks.classList.remove("show-menu");
 
         menuBtn.innerHTML =
-            '<i class="ri-menu-3-line"></i>';
+        '<i class="ri-menu-3-line"></i>';
 
     });
+
+});
+
+
+// =========================
+// CLOSE MENU OUTSIDE CLICK
+// =========================
+
+document.addEventListener("click", (e) => {
+
+    const isMenu =
+        navLinks.contains(e.target);
+
+    const isButton =
+        menuBtn.contains(e.target);
+
+    if(!isMenu && !isButton){
+
+        navLinks.classList.remove("show-menu");
+
+        menuBtn.innerHTML =
+        '<i class="ri-menu-3-line"></i>';
+
+    }
 
 });
 
