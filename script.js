@@ -1,5 +1,5 @@
 // =========================
-// PORTFOLIO ADVANCED SCRIPT
+// PORTFOLIO SCRIPT
 // =========================
 
 
@@ -25,7 +25,8 @@ document.addEventListener("mousemove", (e) => {
 // TYPING EFFECT
 // =========================
 
-const typingText = document.querySelector(".typing-text");
+const typingText =
+document.querySelector(".typing-text");
 
 const words = [
     "Flutter Developer",
@@ -156,7 +157,8 @@ window.addEventListener("scroll", () => {
 
     sections.forEach((section) => {
 
-        const sectionTop = section.offsetTop;
+        const sectionTop =
+        section.offsetTop;
 
         if(scrollY >= sectionTop - 200){
 
@@ -193,34 +195,9 @@ document.querySelector(".menu-btn");
 const navLinks =
 document.querySelector(".nav-links");
 
-const menuIcon =
-document.querySelector(".menu-btn i");
-
 menuBtn.addEventListener("click", () => {
 
     navLinks.classList.toggle("show-menu");
-
-    if(navLinks.classList.contains("show-menu")){
-
-        menuIcon.classList.remove(
-            "ri-menu-3-line"
-        );
-
-        menuIcon.classList.add(
-            "ri-close-line"
-        );
-
-    }else{
-
-        menuIcon.classList.remove(
-            "ri-close-line"
-        );
-
-        menuIcon.classList.add(
-            "ri-menu-3-line"
-        );
-
-    }
 
 });
 
@@ -234,17 +211,7 @@ document.querySelectorAll(".nav-links a")
 
     link.addEventListener("click", () => {
 
-        navLinks.classList.remove(
-            "show-menu"
-        );
-
-        menuIcon.classList.remove(
-            "ri-close-line"
-        );
-
-        menuIcon.classList.add(
-            "ri-menu-3-line"
-        );
+        navLinks.classList.remove("show-menu");
 
     });
 
@@ -267,10 +234,12 @@ document.body.appendChild(progressBar);
 window.addEventListener("scroll", () => {
 
     const totalHeight =
+
     document.body.scrollHeight -
     window.innerHeight;
 
     const progress =
+
     (window.pageYOffset / totalHeight)
     * 100;
 
@@ -281,10 +250,11 @@ window.addEventListener("scroll", () => {
 
 
 // =========================
-// PARALLAX HERO
+// PARALLAX HERO EFFECT
 // =========================
 
-window.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove",
+(e) => {
 
     const heroImage =
     document.querySelector(".hero-image");
@@ -329,6 +299,7 @@ buttons.forEach((btn) => {
         position.height / 2;
 
         btn.style.transform =
+
         `translate(${x * 0.2}px,
         ${y * 0.2}px)`;
 
@@ -364,12 +335,16 @@ canvas.style.height = "100%";
 canvas.style.zIndex = "-1";
 canvas.style.pointerEvents = "none";
 
-const ctx = canvas.getContext("2d");
+const ctx =
+canvas.getContext("2d");
 
 function resizeCanvas(){
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width =
+    window.innerWidth;
+
+    canvas.height =
+    window.innerHeight;
 
 }
 
@@ -488,7 +463,7 @@ window.addEventListener("resize", () => {
 
 
 // =========================
-// LOADER
+// PAGE LOADER
 // =========================
 
 window.addEventListener("load", () => {
@@ -498,12 +473,12 @@ window.addEventListener("load", () => {
 
     loader.classList.add("loader");
 
-    loader.innerHTML = `
+    loader.innerHTML =
 
-        <div class="loader-text">
-            Suraj SK
-        </div>
-
+    `
+    <div class="loader-text">
+        Suraj SK
+    </div>
     `;
 
     document.body.appendChild(loader);
@@ -520,7 +495,7 @@ window.addEventListener("load", () => {
 
 
 // =========================
-// PROJECT CARD TILT
+// PROJECT CARD TILT EFFECT
 // =========================
 
 const cards =
