@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+
+  <defs>
+
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- Background -->
+
+  <rect
+    width="512"
+    height="512"
+    rx="120"
+    fill="url(#bg)"
+  />
+
+  <!-- Glow Circle -->
+
+  <circle
+    cx="256"
+    cy="256"
+    r="170"
+    fill="#38bdf8"
+    opacity="0.08"
+  />
+
+  <!-- SSR Text -->
+
+  <text
+    x="50%"
+    y="55%"
+    text-anchor="middle"
+    fill="url(#text)"
+    font-size="130"
+    font-family="Poppins, Arial, sans-serif"
+    font-weight="700"
+    filter="url(#glow)"
+    letter-spacing="6"
+  >
+    SSR
+  </text>
+
+</svg>
