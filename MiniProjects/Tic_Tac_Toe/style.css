@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at 20% 20%, rgba(107, 150, 255, 0.14), transparent 24%),
+                radial-gradient(circle at 80% 10%, rgba(255, 120, 160, 0.14), transparent 20%),
+                linear-gradient(180deg, #0f1b33 0%, #090f1f 100%);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #f4f7ff;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 22%),
+                radial-gradient(circle at bottom left, rgba(34, 173, 255, 0.05), transparent 18%);
+    pointer-events: none;
+}
+
+.wrapper {
+    width: min(100%, 760px);
+    padding: 28px;
+    border-radius: 34px;
+    background: rgba(10, 16, 32, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.45);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.title-group {
+    text-align: left;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 3.5vw, 3.8rem);
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.control-card {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.control-card label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.control-card select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f9fbff;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.control-card select:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(123, 144, 255, 0.9);
+}
+
+.control-card option {
+    background: #0f1b33;
+    color: #f4f7ff;
+}
+
+.status {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1rem;
+    color: #e9efff;
+}
+
+#game-board {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--board-size, 3), minmax(80px, 1fr));
+    gap: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 18px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button-primary {
+    color: #0e1732;
+    background: linear-gradient(135deg, #7b90ff, #5d70ff);
+    box-shadow: 0 14px 28px rgba(92, 106, 255, 0.28);
+}
+
+.button-secondary {
+    width: 100%;
+    color: #f4f7ff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(80, 104, 255, 0.24);
+}
+
+.win-line {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.win-line.active {
+    opacity: 1;
+}
+
+.win-line::before {
+    content: '';
+    position: absolute;
+    left: var(--left, 50%);
+    top: var(--top, 50%);
+    width: calc(100% - 40px);
+    height: 6px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(78, 211, 255, 0.95));
+    border-radius: 999px;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+    transition: width 0.2s ease, transform 0.2s ease, left 0.2s ease, top 0.2s ease;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    color: #f8fbff;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(8, 14, 29, 0.9));
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cell:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(10, 16, 33, 0.9));
+}
+
+.cell.active {
+    pointer-events: none;
+}
+
+.cell.winning {
+    background: linear-gradient(135deg, #ffe3a1, #ffaf52);
+    color: #08142c;
+    border-color: #ffd88a;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 760px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .wrapper {
+        width: 100%;
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .title-group,
+    .controls,
+    .status,
+    .button-secondary {
+        width: 100%;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .status {
+        font-size: 0.98rem;
+        padding: 14px 16px;
+    }
+
+    .control-card {
+        padding: 14px;
+    }
+
+    .control-card select {
+        padding: 12px 14px;
+    }
+
+    #game-board {
+        gap: 8px;
+        padding: 12px;
+        grid-template-columns: repeat(var(--board-size, 3), minmax(68px, 1fr));
+    }
+
+    .cell {
+        font-size: clamp(1.6rem, 5vw, 3.2rem);
+        min-height: 62px;
+    }
+
+    .button,
+    .button-secondary {
+        padding: 12px 14px;
+    }
+}

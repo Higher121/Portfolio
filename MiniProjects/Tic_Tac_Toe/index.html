@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="tic_tac_toe.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="top-bar">
+            <div class="title-group">
+                <p class="eyebrow">Interactive game mode</p>
+                <h1>Tic Tac Toe</h1>
+            </div>
+            <button id="reset-btn" type="button" class="button button-primary">Restart</button>
+        </header>
+        <section class="controls">
+            <div class="control-card">
+                <label for="board-size">Board size</label>
+                <select id="board-size">
+                    <option value="3" selected>3 x 3</option>
+                    <option value="4">4 x 4</option>
+                    <option value="5">5 x 5</option>
+                </select>
+            </div>
+            <div class="control-card">
+                <label for="symbol-set">Symbols</label>
+                <select id="symbol-set">
+                    <option value="classic" selected>X / O</option>
+                    <option value="emoji1">😄 / 😎</option>
+                    <option value="emoji2">🌞 / 🌚</option>
+                </select>
+            </div>
+        </section>
+        <div class="status" id="status">Player X's turn</div>
+        <div id="game-board" class="board"></div>
+        <button id="reset-btn-bottom" type="button" class="button button-secondary">Restart Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dots & Boxes Enterprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="app">
+
+    <header class="topbar">
+        <div class="title-block">
+            <p class="eyebrow">Strategic grid challenge</p>
+            <h1>Dots & Boxes Enterprise</h1>
+        </div>
+
+        <div class="actions">
+            <button id="newGameBtn" class="button button-primary">New Game</button>
+        <button id="settingsBtn" class="button button-secondary">Settings</button>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <div class="card">
+            <p id="playerLabel">Player</p>
+            <strong id="playerScore">0</strong>
+        </div>
+
+        <div class="card">
+            <p id="opponentLabel">AI</p>
+            <strong id="opponentScore">0</strong>
+        </div>
+
+        <div class="card">
+            <p>Games Won</p>
+            <strong id="wins">0</strong>
+        </div>
+
+        <div class="card">
+            <p>Turn</p>
+            <strong id="turn">Player</strong>
+        </div>
+    </section>
+
+    <section class="status-panel">
+        <p id="statusMessage">Ready. Start by selecting a line.</p>
+    </section>
+
+    <div id="board" class="board"></div>
+
+    <div class="bottom-toolbar">
+        <button id="resetBtn" class="button button-secondary">Reset Board</button>
+        <span class="toolbar-note">Closer lines, sharper squares, and faster play.</span>
+    </div>
+
+</div>
+
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Game Settings</h2>
+            <button id="closeSettings" class="close-button" aria-label="Close">❌</button>
+        </div>
+
+        <label class="field">
+            <span>Board size</span>
+            <select id="boardSize">
+                <option value="4">4 x 4</option>
+                <option value="5" selected>5 x 5</option>
+                <option value="6">6 x 6</option>
+            </select>
+        </label>
+
+        <label class="field">
+            <span>Game mode</span>
+            <select id="gameMode">
+                <option value="ai" selected>Player vs AI</option>
+                <option value="hotseat">2 Player</option>
+            </select>
+        </label>
+
+        <label class="field field-inline">
+            <span>Sound effects</span>
+            <input type="checkbox" id="soundToggle" checked>
+        </label>
+
+        <button id="saveSettings" class="button button-primary">Save Settings</button>
+    </div>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
